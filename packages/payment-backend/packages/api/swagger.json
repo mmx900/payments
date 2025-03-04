@@ -7,7 +7,7 @@
     }
   ],
   "info": {
-    "version": "9.0.0",
+    "version": "10.0.0",
     "title": "@samchon/payment-backend",
     "description": "Payment Backend Server",
     "license": {
@@ -26,7 +26,13 @@
               "application/json": {}
             }
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "monitors",
+          "health",
+          "get"
+        ],
+        "x-samchon-controller": "MonitorHealthController"
       }
     },
     "/monitors/performance": {
@@ -45,7 +51,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "monitors",
+          "performance",
+          "get"
+        ],
+        "x-samchon-controller": "MonitorPerformanceController"
       }
     },
     "/monitors/system": {
@@ -64,7 +76,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "monitors",
+          "system",
+          "get"
+        ],
+        "x-samchon-controller": "MonitorSystemController"
       }
     },
     "/payments/histories/get": {
@@ -111,7 +129,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "payments",
+          "histories",
+          "get"
+        ],
+        "x-samchon-controller": "PaymentHistoriesController"
       }
     },
     "/payments/histories/{id}": {
@@ -169,7 +193,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "payments",
+          "histories",
+          "at"
+        ],
+        "x-samchon-controller": "PaymentHistoriesController"
       }
     },
     "/payments/histories": {
@@ -216,7 +246,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "payments",
+          "histories",
+          "create"
+        ],
+        "x-samchon-controller": "PaymentHistoriesController"
       }
     },
     "/payments/histories/cancel": {
@@ -263,7 +299,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "payments",
+          "histories",
+          "cancel"
+        ],
+        "x-samchon-controller": "PaymentHistoriesController"
       }
     },
     "/payments/reservations/get": {
@@ -310,7 +352,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "payments",
+          "reservations",
+          "get"
+        ],
+        "x-samchon-controller": "PaymentReservationsController"
       }
     },
     "/payments/reservations/{id}": {
@@ -368,7 +416,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "payments",
+          "reservations",
+          "at"
+        ],
+        "x-samchon-controller": "PaymentReservationsController"
       }
     },
     "/payments/reservations": {
@@ -415,7 +469,13 @@
             },
             "x-nestia-encrypted": true
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "payments",
+          "reservations",
+          "create"
+        ],
+        "x-samchon-controller": "PaymentReservationsController"
       }
     },
     "/payments/webhooks/iamport": {
@@ -439,7 +499,13 @@
               "application/json": {}
             }
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "payments",
+          "webhooks",
+          "iamport"
+        ],
+        "x-samchon-controller": "PaymentWebhooksController"
       }
     }
   },

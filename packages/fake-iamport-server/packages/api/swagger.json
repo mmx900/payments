@@ -13,7 +13,7 @@
   "info": {
     "title": "Iamport API",
     "description": "Built by [fake-iamport-server](https://github.com/samchon/payments/tree/master/packages/fake-iamport-server) with [nestia](https://github.com/samchon/nestia)",
-    "version": "9.0.0",
+    "version": "10.0.0",
     "license": {
       "name": "MIT"
     }
@@ -51,7 +51,13 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "subscribe",
+          "customers",
+          "at"
+        ],
+        "x-samchon-controller": "FakeIamportSubscribeCustomersController"
       },
       "post": {
         "summary": "간편 결제 카드 등록하기",
@@ -95,7 +101,13 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "subscribe",
+          "customers",
+          "create"
+        ],
+        "x-samchon-controller": "FakeIamportSubscribeCustomersController"
       },
       "delete": {
         "summary": "간편 결제 카드 삭제하기",
@@ -128,7 +140,13 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "subscribe",
+          "customers",
+          "erase"
+        ],
+        "x-samchon-controller": "FakeIamportSubscribeCustomersController"
       }
     },
     "/subscribe/payments/onetime": {
@@ -164,7 +182,13 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "subscribe",
+          "payments",
+          "onetime"
+        ],
+        "x-samchon-controller": "FakeIampotSubscribePaymentsController"
       }
     },
     "/subscribe/payments/again": {
@@ -200,7 +224,13 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "subscribe",
+          "payments",
+          "again"
+        ],
+        "x-samchon-controller": "FakeIampotSubscribePaymentsController"
       }
     },
     "/certifications/{imp_uid}": {
@@ -235,7 +265,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "certifications",
+          "at"
+        ],
+        "x-samchon-controller": "FakeIamportCertificationsController"
       },
       "delete": {
         "summary": "본인인증 정보 삭제하기",
@@ -268,7 +303,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "certifications",
+          "erase"
+        ],
+        "x-samchon-controller": "FakeIamportCertificationsController"
       }
     },
     "/certifications/otp/request": {
@@ -304,7 +344,13 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "certifications",
+          "otp",
+          "request"
+        ],
+        "x-samchon-controller": "FakeIamportCertificationsController"
       }
     },
     "/certifications/otp/confirm/{imp_uid}": {
@@ -350,7 +396,13 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "certifications",
+          "otp",
+          "confirm"
+        ],
+        "x-samchon-controller": "FakeIamportCertificationsController"
       }
     },
     "/internal/webhook": {
@@ -377,7 +429,12 @@
               "application/json": {}
             }
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "internal",
+          "webhook"
+        ],
+        "x-samchon-controller": "FakeIamportInternalController"
       }
     },
     "/internal/deposit/{imp_uid}": {
@@ -408,7 +465,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "internal",
+          "deposit"
+        ],
+        "x-samchon-controller": "FakeIamportInternalController"
       }
     },
     "/payments/{imp_uid}": {
@@ -453,7 +515,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "payments",
+          "at"
+        ],
+        "x-samchon-controller": "FakeIamportPaymentsController"
       }
     },
     "/payments/cancel": {
@@ -489,7 +556,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "payments",
+          "cancel"
+        ],
+        "x-samchon-controller": "FakeIamportPaymentsController"
       }
     },
     "/receipts/{imp_uid}": {
@@ -524,7 +596,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "receipts",
+          "at"
+        ],
+        "x-samchon-controller": "FakeIamportReceiptsController"
       },
       "post": {
         "summary": "현금 영수증 발행하기",
@@ -568,7 +645,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "receipts",
+          "create"
+        ],
+        "x-samchon-controller": "FakeIamportReceiptsController"
       },
       "delete": {
         "summary": "현금 영수증 취소하기",
@@ -601,7 +683,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "receipts",
+          "erase"
+        ],
+        "x-samchon-controller": "FakeIamportReceiptsController"
       }
     },
     "/users/getToken": {
@@ -632,7 +719,12 @@
               }
             }
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "users",
+          "getToken"
+        ],
+        "x-samchon-controller": "FakeIamportUsersController"
       }
     },
     "/vbanks": {
@@ -668,7 +760,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "vbanks",
+          "create"
+        ],
+        "x-samchon-controller": "FakeIamportVbanksController"
       },
       "put": {
         "summary": "가상 계좌 편집하기",
@@ -702,7 +799,12 @@
           {
             "bearer": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "vbanks",
+          "update"
+        ],
+        "x-samchon-controller": "FakeIamportVbanksController"
       }
     }
   },

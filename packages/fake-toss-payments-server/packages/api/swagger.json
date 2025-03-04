@@ -13,7 +13,7 @@
   "info": {
     "title": "Toss Payments API",
     "description": "Built by [fake-toss-payments-server](https://github.com/samchon/payments/tree/master/packages/toss-payments-server-api) with [nestia](https://github.com/samchon/nestia)",
-    "version": "9.0.0",
+    "version": "10.0.0",
     "license": {
       "name": "MIT"
     }
@@ -52,7 +52,15 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "billing",
+          "authorizations",
+          "card",
+          "create"
+        ],
+        "x-samchon-controller": "FakeTossBillingController"
       }
     },
     "/v1/billing/authorizations/{billingKey}": {
@@ -98,7 +106,14 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "billing",
+          "authorizations",
+          "at"
+        ],
+        "x-samchon-controller": "FakeTossBillingController"
       }
     },
     "/v1/billing/{billingKey}": {
@@ -160,7 +175,13 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "billing",
+          "pay"
+        ],
+        "x-samchon-controller": "FakeTossBillingController"
       }
     },
     "/v1/cash-receipts": {
@@ -196,7 +217,13 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "cash_receipts",
+          "create"
+        ],
+        "x-samchon-controller": "FakeTossCashReceiptsController"
       }
     },
     "/v1/cash-receipts/{receiptKey}/cancel": {
@@ -242,7 +269,13 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "cash_receipts",
+          "cancel"
+        ],
+        "x-samchon-controller": "FakeTossCashReceiptsController"
       }
     },
     "/internal/webhook": {
@@ -269,7 +302,12 @@
               "application/json": {}
             }
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "internal",
+          "webhook"
+        ],
+        "x-samchon-controller": "FakeTossInternalController"
       }
     },
     "/internal/{paymentKey}/deposit": {
@@ -320,7 +358,12 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "internal",
+          "deposit"
+        ],
+        "x-samchon-controller": "FakeTossInternalController"
       }
     },
     "/v1/payments/{paymentKey}": {
@@ -366,7 +409,13 @@
               }
             }
           }
-        }
+        },
+        "x-samchon-accessor": [
+          "v1",
+          "payments",
+          "at"
+        ],
+        "x-samchon-controller": "FakeTossPaymentsController"
       },
       "post": {
         "summary": "결제 승인하기",
@@ -426,7 +475,13 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "payments",
+          "approve"
+        ],
+        "x-samchon-controller": "FakeTossPaymentsController"
       }
     },
     "/v1/payments/key-in": {
@@ -462,7 +517,13 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "payments",
+          "key_in"
+        ],
+        "x-samchon-controller": "FakeTossPaymentsController"
       }
     },
     "/v1/payments/{paymentKey}/cancel": {
@@ -524,7 +585,13 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "payments",
+          "cancel"
+        ],
+        "x-samchon-controller": "FakeTossPaymentsController"
       }
     },
     "/v1/virtual-accounts": {
@@ -560,7 +627,13 @@
           {
             "basic": []
           }
-        ]
+        ],
+        "x-samchon-accessor": [
+          "v1",
+          "virtual_accounts",
+          "create"
+        ],
+        "x-samchon-controller": "FakeTossVirtualAccountsController"
       }
     }
   },
