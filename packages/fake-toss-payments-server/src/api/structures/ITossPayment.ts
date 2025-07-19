@@ -188,6 +188,11 @@ export namespace ITossPayment {
    */
   export interface IApproval {
     /**
+     * 결제 식별자 키.
+     */
+    paymentKey: string;
+
+    /**
      * 주문 식별자 키.
      *
      * 토스 페이먼츠가 아닌, 이를 이용하는 서비스에서 자체적으로 관리하는 식별자 키.

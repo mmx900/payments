@@ -47,8 +47,8 @@ export async function test_fake_card_payment(): Promise<ITossCardPayment> {
   )(() =>
     toss.functional.v1.payments.approve(
       TestConnection.FAKE,
-      payment.paymentKey,
       {
+        paymentKey: payment.paymentKey,
         orderId: "wrong-order-id",
         amount: payment.totalAmount,
       },
@@ -61,8 +61,8 @@ export async function test_fake_card_payment(): Promise<ITossCardPayment> {
   )(() =>
     toss.functional.v1.payments.approve(
       TestConnection.FAKE,
-      payment.paymentKey,
       {
+        paymentKey: payment.paymentKey,
         orderId: payment.orderId,
         amount: payment.totalAmount - 100,
       },
@@ -72,8 +72,8 @@ export async function test_fake_card_payment(): Promise<ITossCardPayment> {
   // 정확한 `orderId` 와 주문 금액을 입력해야 비로소 승인 처리된다.
   const approved: ITossPayment = await toss.functional.v1.payments.approve(
     TestConnection.FAKE,
-    payment.paymentKey,
     {
+      paymentKey: payment.paymentKey,
       orderId: payment.orderId,
       amount: payment.totalAmount,
     },

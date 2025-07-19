@@ -48,8 +48,8 @@ export async function test_fake_virtual_account_payment(): Promise<ITossVirtualA
   // 백엔드 서버에서 해당 건을 승인함으로써, 비로소 해당 결제가 완성된다.
   const approved: ITossPayment = await toss.functional.v1.payments.approve(
     TestConnection.FAKE,
-    payment.paymentKey,
     {
+      paymentKey: payment.paymentKey,
       orderId: payment.orderId,
       amount: payment.totalAmount,
     },

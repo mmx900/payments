@@ -56,8 +56,8 @@ export async function test_fake_storage_capacity(): Promise<void> {
     // APPROVE THE PAYMENT
     await toss.functional.v1.payments.approve(
       TestConnection.FAKE,
-      payment.paymentKey,
       {
+        paymentKey: payment.paymentKey,
         orderId,
         amount,
       },
